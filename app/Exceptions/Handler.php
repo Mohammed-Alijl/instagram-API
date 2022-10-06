@@ -2,11 +2,14 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\Api\Traits\Api_Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    use Api_Response;
     /**
      * A list of exception types with their corresponding custom log levels.
      *
@@ -46,5 +49,13 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Exception|Throwable $e)
+    {
+        if ($e instanceof NotFoundHttpException) {
+            return $this->apiResponse(null, 404, 'This url is not true, please check it again');
+        }
+        return parent::render($request, $e);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix'=>'auth/user'],function(){
+    Route::post('/login',[UserAuthController::class,'login']);
+    Route::post('/register',[UserAuthController::class,'register']);
+    Route::post('/logout',[UserAuthController::class,'logout']);
+    Route::get('/info',[UserAuthController::class,'getUserInfo']);
 });
+
