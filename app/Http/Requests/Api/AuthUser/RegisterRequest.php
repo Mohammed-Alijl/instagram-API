@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api\AuthUser;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Models\User;
-use App\Traits\ImageTrait;
+use App\Traits\VideoTrait;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Exception;
@@ -12,7 +12,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class RegisterRequest extends FormRequest
 {
-    use Api_Response,ImageTrait;
+    use Api_Response,VideoTrait;
 
     /**
      * Determine if the user is authorized to make this request.

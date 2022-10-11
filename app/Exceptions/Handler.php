@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
