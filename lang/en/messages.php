@@ -77,8 +77,8 @@ return [
     'post.show' => 'post restored successfully',
     'post.store' => 'Post added successfully',
     'post.update' => 'Post updated successfully',
-    'post.destroy'=>'The post was deleted',
-    'post.found'=>'The post is not exists',
+    'post.destroy' => 'The post was deleted',
+    'post.found' => 'The post is not exists',
     'post.caption.string' => 'Please write the caption',
     'post.caption.max' => 'The caption is too long',
     'post.media.required' => 'The photo or video is required',
@@ -86,4 +86,22 @@ return [
     'post.media.*.required' => 'The photo or video is required',
     'post.media.*.max' => 'You can select only 10 photos or videos in one post',
     'post.media.*.mimes' => 'please select images and videos only',
+
+
+
+    //===========================================================
+    // COMMENT
+    //===========================================================
+    'comment.index'=>'All comments for user in the post have been successfully restored',
+    'comment.show'=>'Comment restored successfully',
+    'comment.store'=>'Comment added successfully',
+    'comment.update'=>'Comment updated successfully',
+    'comment.destroy'=>'The comment was deleted',
+    'comment.notFound'=>'The comment is not exists',
+    'comment.post_id.required' => 'post id is required',
+    'comment.post_id.numeric' => 'post id should be numeric',
+    'comment.post_id.exists' => 'The post is not exists',
+    'comment.comment.required' => 'Comment is required',
+    'comment.comment.string' => 'Please write the comment in right way',
+    'comment.comment.max' => 'The comment is too long',
 ];

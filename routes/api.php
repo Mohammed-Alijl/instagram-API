@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\UserAuthController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::group(['prefix' => 'auth/user'], function () {
 });
 
 Route::resources([
-    'post' => PostController::class
+    'post' => PostController::class,
+    'comment' => CommentController::class,
 ], ['except' => ['create', 'edit']]);
 
