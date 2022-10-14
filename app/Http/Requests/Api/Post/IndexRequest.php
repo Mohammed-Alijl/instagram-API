@@ -24,7 +24,7 @@ class IndexRequest extends FormRequest
     public function run(){
         try {
             $posts = auth('user')->user()->posts()->orderBy('created_at')->paginate(config('constants.POST_PAGINATION'));
-            return $this->apiResponse(PostResource::collection($posts),200,__('messages.post.index'));
+            return PostResource::collection($posts);
         }catch (Exception $ex){
             return $this->apiResponse(null,500,$ex->getMessage());
         }
