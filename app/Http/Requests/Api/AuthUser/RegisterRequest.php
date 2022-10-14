@@ -12,7 +12,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class RegisterRequest extends FormRequest
 {
-    use Api_Response,VideoTrait;
+    use Api_Response, VideoTrait;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -33,7 +33,10 @@ class RegisterRequest extends FormRequest
             $user->password = bcrypt($this->password);
             $user->bio = $this->bio;
             $user->phone = $this->phone;
-            $user->nick_name = $this->nick_name;
+            if ($this->filled('nick_name'))
+                $user->nick_name = $this->nick_name;
+            else
+                $user->nick_name = $this->name;
             $user->date_of_birth = $this->date_of_birth;
             if ($image = $this->file('image')) {
                 $imageName = $this->save_image($image, "img/users/profile");
@@ -43,7 +46,7 @@ class RegisterRequest extends FormRequest
                 $token = $user->createToken('UserType')->accessToken;
                 return $this->apiResponse(['access_token' => $token], 201, __('messages.register'));
             }
-            return $this->apiResponse(null,500,__('messages.failed'));
+            return $this->apiResponse(null, 500, __('messages.failed'));
         } catch (Exception $exception) {
             return $this->apiResponse(null, 500, $exception->getMessage());
         }
@@ -58,10 +61,10 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:100|unique:users,name',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|max:30',
-            'bio'=>'string|max:255',
-            'nick_name' => 'required|string|max:255',
+            'bio' => 'string|max:255',
+            'nick_name' => 'string|max:255',
             'date_of_birth' => 'required|string|max:255',
             'phone' => 'required|min:6|max:15|unique:users,phone',
             'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -74,7 +77,7 @@ class RegisterRequest extends FormRequest
             'name.required' => __('messages.authUser.name.required'),
             'name.string' => __('messages.authUser.name.string'),
             'name.max' => __('messages.authUser.name.max'),
-            'name.unique'=>__('messages.authUser.name.unique'),
+            'name.unique' => __('messages.authUser.name.unique'),
             'email.required' => __('messages.authUser.email.required'),
             'email.email' => __('messages.authUser.email.email'),
             'email.max' => __('messages.authUser.email.max'),
@@ -83,9 +86,8 @@ class RegisterRequest extends FormRequest
             'password.string' => __('messages.authUser.password.string'),
             'password.min' => __('messages.authUser.password.min'),
             'password.max' => __('messages.authUser.password.max'),
-            'bio.string'=>__('messages.authUser.bio.string'),
-            'bio.max'=>__('messages.authUser.bio.max'),
-            'nick_name.required' => __('messages.authUser.nick_name.required'),
+            'bio.string' => __('messages.authUser.bio.string'),
+            'bio.max' => __('messages.authUser.bio.max'),
             'nick_name.string' => __('messages.authUser.nick_name.string'),
             'nick_name.max' => __('messages.authUser.nick_name.max'),
             'date_of_birth.required' => __('messages.authUser.date_of_birth.required'),
@@ -93,7 +95,7 @@ class RegisterRequest extends FormRequest
             'date_of_birth.max' => __('messages.authUser.date_of_birth.max'),
             'phone.required' => __('messages.authUser.phone.required'),
             'phone.min' => __('messages.authUser.phone.min'),
-            'phone.unique'=>__('messages.authUser.phone.unique'),
+            'phone.unique' => __('messages.authUser.phone.unique'),
             'phone.max' => __('messages.authUser.phone.max'),
             'image.mimes' => __('messages.authUser.image.mimes'),
             'image.max' => __('messages.authUser.image.max'),
