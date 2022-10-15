@@ -104,4 +104,17 @@ return [
     'comment.comment.required' => 'Comment is required',
     'comment.comment.string' => 'Please write the comment in right way',
     'comment.comment.max' => 'The comment is too long',
+
+
+
+    //===========================================================
+    // COMMENT
+    //===========================================================
+    'like.like'=>'User like the post',
+    'like.not.like'=>'User didn\'t like it',
+    'like.store'=>'Like added successfully',
+    'like.destroy'=>'The post has been liked removed',
+    'like.exists'=>'Like already exists',
+    'like.post_id.required'=>'Post id is required',
+    'like.post_id.numeric'=>'Post id should be numeric',
 ];

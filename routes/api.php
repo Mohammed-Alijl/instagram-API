@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\PostLikeController;
 use App\Http\Controllers\Api\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,7 @@ Route::group(['prefix' => 'auth/user'], function () {
     Route::post('/logout', [UserAuthController::class, 'logout']);
     Route::get('/info', [UserAuthController::class, 'getUserInfo']);
 });
-
+Route::resource('post/like', PostLikeController::class)->except(['create', 'edit', 'update']);
 Route::resources([
     'post' => PostController::class,
     'comment' => CommentController::class,
