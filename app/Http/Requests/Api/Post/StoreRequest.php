@@ -62,7 +62,7 @@ class StoreRequest extends FormRequest
         return [
             'caption' => 'string|max:255',
             'media' => 'required|array',
-            'media.*' => 'required|mimes:jpg,jpeg,svg,png,gif,jfif,pjpeg,pjp,webp,avif,video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi'
+            'media.*' => 'required|mimes:jpg,jpeg,svg,png,gif,jfif,pjpeg,pjp,webp,avif,x-ms-asf,x-flv,mp4,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv,avi'
         ];
     }
 
