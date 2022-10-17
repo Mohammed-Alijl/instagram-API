@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CommentLikeController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
 use App\Http\Controllers\Api\ReplyController;
+use App\Http\Controllers\Api\ReplyLikeController;
 use App\Http\Controllers\Api\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,11 @@ Route::group(['prefix' => 'comment/like'], function () {
     Route::get('/{id}', [CommentLikeController::class, 'show']);
     Route::post('', [CommentLikeController::class, 'store']);
     Route::delete('/{id}', [CommentLikeController::class, 'destroy']);
+});
+Route::group(['prefix' => 'reply/like'], function () {
+    Route::get('/{id}', [ReplyLikeController::class, 'show']);
+    Route::post('', [ReplyLikeController::class, 'store']);
+    Route::delete('/{id}', [ReplyLikeController::class, 'destroy']);
 });
 
 Route::resources([
