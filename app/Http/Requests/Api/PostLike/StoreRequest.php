@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             if(DB::table('likes')->where(['post_id'=>$this->post_id,'user_id'=>auth('user')->id()])->first())
                 return $this->apiResponse(null,422,__('messages.like.exists'));
             $like = DB::table('likes')->insert(['user_id'=>auth('user')->id(),'post_id'=>$this->post_id]);
-                return $this->apiResponse($like,200,__('messages.like.store'));
+                return $this->apiResponse($like,201,__('messages.like.store'));
         }catch (Exception $ex){
             return $this->apiResponse(null,500,$ex->getMessage());
         }

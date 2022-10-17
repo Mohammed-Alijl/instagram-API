@@ -98,6 +98,14 @@ return [
     'comment.update'=>'Comment updated successfully',
     'comment.destroy'=>'The comment was deleted',
     'comment.notFound'=>'The comment is not exists',
+    'comment.like'=>'The user like the comment',
+    'comment.not.like'=>'The user does\'nt like the comment',
+    'comment.comment_id.required'=>'Comment id is required',
+    'comment.comment_id.numeric'=>'Comment id should be numeric',
+    'comment.comment_id.exists'=>'The comment is not exists',
+    'comment.like.exists'=>'Like already exists',
+    'comment.like.add'=>'Like added successfully',
+    'comment.like.destroy'=>'The comment like has been removed',
     'comment.post_id.required' => 'post id is required',
     'comment.post_id.numeric' => 'post id should be numeric',
     'comment.post_id.exists' => 'The post is not exists',
@@ -108,12 +116,12 @@ return [
 
 
     //===========================================================
-    // COMMENT
+    // POST LIKE
     //===========================================================
     'like.like'=>'User like the post',
     'like.not.like'=>'User didn\'t like it',
     'like.store'=>'Like added successfully',
-    'like.destroy'=>'The post has been liked removed',
+    'like.destroy'=>'The post like has been removed',
     'like.exists'=>'Like already exists',
     'like.post_id.required'=>'Post id is required',
     'like.post_id.numeric'=>'Post id should be numeric',
