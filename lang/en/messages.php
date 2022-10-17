@@ -88,24 +88,23 @@ return [
     'post.media.*.mimes' => 'please select images and videos only',
 
 
-
     //===========================================================
     // COMMENT
     //===========================================================
-    'comment.index'=>'All comments for user in the post have been successfully restored',
-    'comment.show'=>'Comment restored successfully',
-    'comment.store'=>'Comment added successfully',
-    'comment.update'=>'Comment updated successfully',
-    'comment.destroy'=>'The comment was deleted',
-    'comment.notFound'=>'The comment is not exists',
-    'comment.like'=>'The user like the comment',
-    'comment.not.like'=>'The user does\'nt like the comment',
-    'comment.comment_id.required'=>'Comment id is required',
-    'comment.comment_id.numeric'=>'Comment id should be numeric',
-    'comment.comment_id.exists'=>'The comment is not exists',
-    'comment.like.exists'=>'Like already exists',
-    'comment.like.add'=>'Like added successfully',
-    'comment.like.destroy'=>'The comment like has been removed',
+    'comment.index' => 'All comments for user in the post have been successfully restored',
+    'comment.show' => 'Comment restored successfully',
+    'comment.store' => 'Comment added successfully',
+    'comment.update' => 'Comment updated successfully',
+    'comment.destroy' => 'The comment was deleted',
+    'comment.notFound' => 'The comment is not exists',
+    'comment.like' => 'The user like the comment',
+    'comment.not.like' => 'The user does\'nt like the comment',
+    'comment.comment_id.required' => 'Comment id is required',
+    'comment.comment_id.numeric' => 'Comment id should be numeric',
+    'comment.comment_id.exists' => 'The comment is not exists',
+    'comment.like.exists' => 'Like already exists',
+    'comment.like.add' => 'Like added successfully',
+    'comment.like.destroy' => 'The comment like has been removed',
     'comment.post_id.required' => 'post id is required',
     'comment.post_id.numeric' => 'post id should be numeric',
     'comment.post_id.exists' => 'The post is not exists',
@@ -114,15 +113,30 @@ return [
     'comment.comment.max' => 'The comment is too long',
 
 
-
     //===========================================================
     // POST LIKE
     //===========================================================
-    'like.like'=>'User like the post',
-    'like.not.like'=>'User didn\'t like it',
-    'like.store'=>'Like added successfully',
-    'like.destroy'=>'The post like has been removed',
-    'like.exists'=>'Like already exists',
-    'like.post_id.required'=>'Post id is required',
-    'like.post_id.numeric'=>'Post id should be numeric',
+    'like.like' => 'User like the post',
+    'like.not.like' => 'User didn\'t like it',
+    'like.store' => 'Like added successfully',
+    'like.destroy' => 'The post like has been removed',
+    'like.exists' => 'Like already exists',
+    'like.post_id.required' => 'Post id is required',
+    'like.post_id.numeric' => 'Post id should be numeric',
+
+
+    //===========================================================
+    // REPLY
+    //===========================================================
+    'reply.notFound' => 'The reply is not exists',
+    'reply.show' => 'Reply ',
+    'reply.store' => 'Reply restored successfully',
+    'reply.update' => 'Reply added successfully',
+    'reply.destroy' => 'The reply was deleted',
+    'reply.comment_id.required' => 'Comment id is required',
+    'reply.comment_id.numeric' => 'Comment id should be numeric',
+    'reply.comment_id.exists' => 'Comment id is invalid',
+    'reply.reply.required' => 'Reply is required',
+    'reply.reply.string' => 'Please write the reply in right way',
+    'reply.reply.max' => 'The reply is too long',
 ];

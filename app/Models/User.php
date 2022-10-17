@@ -52,13 +52,23 @@ class User extends Authenticatable
     // RELATIONSHIPS
     //////////////////////////////////////////////////////////////////
 
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany(Post::class);
     }
-    public function comments(){
+
+    public function comments()
+    {
         return $this->hasMany(Comment::class);
     }
-    public function postlikes(){
-        return $this->belongsToMany(Post::class,'likes');
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    public function postlikes()
+    {
+        return $this->belongsToMany(Post::class, 'likes');
     }
 }
