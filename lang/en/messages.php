@@ -129,9 +129,9 @@ return [
     // REPLY
     //===========================================================
     'reply.notFound' => 'The reply is not exists',
-    'reply.show' => 'Reply ',
-    'reply.store' => 'Reply restored successfully',
-    'reply.update' => 'Reply added successfully',
+    'reply.show' => 'Reply restored successfully',
+    'reply.store' => 'Reply added successfully',
+    'reply.update' => 'Reply edit successfully',
     'reply.destroy' => 'The reply was deleted',
     'reply.comment_id.required' => 'Comment id is required',
     'reply.like' => 'The user like the reply',
@@ -139,12 +139,25 @@ return [
     'reply.like.exists' => 'Like already exists',
     'reply.like.add' => 'Like added successfully',
     'reply.like.destroy' => 'The reply like has been removed',
-    'reply.reply_id.required'=>'Reply id is required',
-    'reply.reply_id.numeric'=>'Reply id should be numeric',
-    'reply.reply_id.exists'=>'Reply id is invalid',
+    'reply.reply_id.required' => 'Reply id is required',
+    'reply.reply_id.numeric' => 'Reply id should be numeric',
+    'reply.reply_id.exists' => 'Reply id is invalid',
     'reply.comment_id.numeric' => 'Comment id should be numeric',
     'reply.comment_id.exists' => 'Comment id is invalid',
     'reply.reply.required' => 'Reply is required',
     'reply.reply.string' => 'Please write the reply in right way',
     'reply.reply.max' => 'The reply is too long',
+
+
+    //===========================================================
+    // FOLLOW
+    //===========================================================
+    'follow.true' => 'You follow this user',
+    'follow.false' => 'You don\'t follow this user',
+    'follow.store' => 'Follow added successfully',
+    'follow.destroy' => 'unfollow was succeeded',
+    'follow.exists' => 'You already follow this user',
+    'follow.user_id.required' => 'User id is required',
+    'follow.user_id.numeric' => 'Use id should be numeric',
+    'follow.user_id.exists' => 'User id is invalid',
 ];

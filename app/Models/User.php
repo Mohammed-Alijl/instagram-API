@@ -71,4 +71,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Post::class, 'likes');
     }
+
+    public function followers(){
+        return $this->belongsToMany(User::class,'user_followers','user_id','follower_id','id','id');
+    }
+    public function follow(){
+        return $this->belongsToMany(User::class,'user_followers','follower_id','user_id','id','id');
+    }
+
 }

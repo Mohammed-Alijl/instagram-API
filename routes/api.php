@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\CommentLikeController;
+use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
 use App\Http\Controllers\Api\ReplyController;
@@ -41,7 +42,8 @@ Route::group(['prefix' => 'reply/like'], function () {
     Route::post('', [ReplyLikeController::class, 'store']);
     Route::delete('/{id}', [ReplyLikeController::class, 'destroy']);
 });
-
+Route::get('followers',[FollowController::class,'followers']);
+Route::resource('follow',FollowController::class)->except('update','create','edit');
 Route::resources([
     'post' => PostController::class,
     'comment/reply' => ReplyController::class,
