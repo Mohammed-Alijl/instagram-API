@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api\AuthUser;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
+use App\Http\Resources\UserResource;
 use Illuminate\Foundation\Http\FormRequest;
 use Exception;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -22,7 +23,7 @@ class UserInfoRequest extends FormRequest
 
     public function run(){
         try {
-            return $this->apiResponse(auth('user')->user(), 200, __('messages.authUser.info'));
+            return $this->apiResponse(new UserResource(auth('user')->user()), 200, __('messages.authUser.info'));
         }catch (Exception $exception){
             return $this->apiResponse(null,500,$exception->getMessage());
         }

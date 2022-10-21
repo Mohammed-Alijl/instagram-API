@@ -52,7 +52,7 @@ class UpdateRequest extends FormRequest
         return [
             'bio' => 'string|max:255',
             'nick_name' => 'string|max:255',
-            'date_of_birth' => 'date_format:d-m-Y|max:255',
+            'date_of_birth' => 'date_format:d/m/Y|max:255',
         ];
     }
 

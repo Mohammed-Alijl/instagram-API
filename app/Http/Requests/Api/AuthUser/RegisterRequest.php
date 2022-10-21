@@ -41,7 +41,8 @@ class RegisterRequest extends FormRequest
             if ($image = $this->file('image')) {
                 $imageName = $this->save_image($image, "img/users/profile");
                 $user->image = $imageName;
-            }
+            } else
+                $user->image = 'default.png';
             if ($user->save()) {
                 $token = $user->createToken('UserType')->accessToken;
                 return $this->apiResponse(['access_token' => $token], 201, __('messages.register'));
@@ -65,7 +66,7 @@ class RegisterRequest extends FormRequest
             'password' => 'required|string|min:6|max:30',
             'bio' => 'string|max:255',
             'nick_name' => 'string|max:255',
-            'date_of_birth' => 'required|date_format:d-m-Y|max:255',
+            'date_of_birth' => 'required|date_format:d/m/Y|max:255',
             'phone' => 'required|min:6|max:15|unique:users,phone',
             'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
