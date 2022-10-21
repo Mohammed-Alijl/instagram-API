@@ -23,10 +23,11 @@ class PostResource extends JsonResource
 
         return [
             'post_id' => $this->id,
-            'user' => $this->user,
+            'user' => new UserResource($this->user),
             'caption' => $this->caption,
             'post_media' => $medias,
-//            'likes_num' => $this->likes()->count(),
+            'likes_num' => $this->userlikes()->count(),
+            'comments'=>$this->comments()->orderBy('created_at','desc')->paginate(config('constants.COMMENT_PAGINATION')),
         ];
     }
 }
