@@ -27,7 +27,6 @@ class PostResource extends JsonResource
             'caption' => $this->caption,
             'post_media' => $medias,
             'likes_num' => $this->userlikes()->count(),
-            'comments'=>$this->comments()->orderBy('created_at','desc')->paginate(config('constants.COMMENT_PAGINATION')),
         ];
     }
 }
