@@ -27,8 +27,10 @@ class StoreRequest extends FormRequest
     {
         try {
             $isFollow = DB::table('user_followers')->where(['user_id' => $this->user_id, 'follower_id' => auth('user')->id()])->first();
-            if($isFollow)
-                return $this->apiResponse(null,422,__('messages.follow.exists'));
+            if ($isFollow)
+                return $this->apiResponse(null, 422, __('messages.follow.exists'));
+            if ($this->user_id == auth('user')->id())
+                return $this->apiResponse(null, 422, __('messages.follow.yourself'));
             $follow = DB::table('user_followers')->insert(['user_id' => $this->user_id, 'follower_id' => auth('user')->id()]);
             if ($follow)
                 return $this->apiResponse($follow, 200, __('messages.follow.store'));

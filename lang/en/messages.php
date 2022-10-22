@@ -160,6 +160,7 @@ return [
     'follow.user_id.required' => 'User id is required',
     'follow.user_id.numeric' => 'Use id should be numeric',
     'follow.user_id.exists' => 'User id is invalid',
+    'follow.yourself'=>'You can not follow yourself',
 
 
     //===========================================================
