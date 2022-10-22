@@ -4,6 +4,7 @@ namespace App\Http\Requests\Api\Post;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\PostResource;
+use App\Models\Post;
 use Exception;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,12 +25,8 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            $posts=[];
-            $following = auth('user')->user()->follow;
-            foreach ($following as $follow)
-                foreach ($follow->posts as $post)
-                $posts[] = $post;
-            $posts = collect($posts)->sortByDesc('created_at');
+            $posts = Post::whereIn('user_id', auth('user')->user()->follow->pluck('id'))->orderBy('created_at', 'desc')->paginate(config('constants.POST_PAGINATION'));
+
             return PostResource::collection($posts);
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
