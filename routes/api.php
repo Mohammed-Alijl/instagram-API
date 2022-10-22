@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\ReplyLikeController;
 use App\Http\Controllers\Api\StoryController;
 use App\Http\Controllers\Api\UserAuthController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ViewStoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,11 @@ Route::group(['prefix' => 'reply/like'], function () {
 Route::group(['prefix'=>'profile'],function(){
    Route::get('/{id}',[ProfileController::class,'show']);
    Route::get('/posts/{id}',[ProfileController::class,'profilePosts']);
+});
+Route::group(['prefix'=>'story/view'],function(){
+    Route::get('/users/{id}',[ViewStoryController::class,'index']);
+    Route::get('/{id}',[ViewStoryController::class,'show']);
+    Route::post('',[ViewStoryController::class,'store']);
 });
 Route::get('followers', [FollowController::class, 'followers']);
 Route::get('user/{id}', [UserController::class, 'show']);
