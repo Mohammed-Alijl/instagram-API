@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
 use App\Http\Controllers\Api\ReplyController;
 use App\Http\Controllers\Api\ReplyLikeController;
+use App\Http\Controllers\Api\StoryController;
 use App\Http\Controllers\Api\UserAuthController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,7 @@ Route::get('followers', [FollowController::class, 'followers']);
 Route::get('user/{id}', [UserController::class, 'show']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit');
+Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
 Route::resources([
     'post' => PostController::class,
     'comment/reply' => ReplyController::class,

@@ -162,29 +162,40 @@ return [
     'follow.user_id.exists' => 'User id is invalid',
 
 
-
     //===========================================================
     // USER
     //===========================================================
-    'user.notFound'=>'The user is not exists',
-    'user.show'=>'User restored successfully',
-    'user.update'=>'User info edit successfully',
-    'user.destroy'=>'The user was deleted',
-    'user.password.change'=>'Password has been modified successfully',
-    'user.image.update'=>'User image updated successfully',
-    'user.bio.string'=>'Please write the bio correctly',
-    'user.bio.max'=>'The bio is too long',
-    'user.nick_name.string'=>'please write nick name correctly',
-    'user.nick_name.max'=>'nick name is too long',
-    'user.date_of_birth.date_format'=>'date of birth should be in this format: day/month/year',
-    'user.date_of_birth.max'=>'date of birth should be in this format: d/m/y',
-    'user.image.required'=>'Image is required',
-    'user.image.mimes'=>'The image extension must be: jpeg, png, jpg, gif, svg',
-    'user.image.max'=>'The image size is so big',
-    'user.current_password.false'=>'The current password is incorrect',
-    'user.current_password.required'=>'The current password is required',
-    'user.new_password.required'=>'new password is required',
-    'user.new_password.confirmed'=>'The password and confirmation do not match',
-    'user.new_password.min'=>'The password should be at least 6 character',
-    'user.new_password.max'=>'The password should be maxim 30 character',
+    'user.notFound' => 'The user is not exists',
+    'user.show' => 'User restored successfully',
+    'user.update' => 'User info edit successfully',
+    'user.destroy' => 'The user was deleted',
+    'user.password.change' => 'Password has been modified successfully',
+    'user.image.update' => 'User image updated successfully',
+    'user.bio.string' => 'Please write the bio correctly',
+    'user.bio.max' => 'The bio is too long',
+    'user.nick_name.string' => 'please write nick name correctly',
+    'user.nick_name.max' => 'nick name is too long',
+    'user.date_of_birth.date_format' => 'date of birth should be in this format: day/month/year',
+    'user.date_of_birth.max' => 'date of birth should be in this format: day/month/year',
+    'user.image.required' => 'Image is required',
+    'user.image.mimes' => 'The image extension must be: jpeg, png, jpg, gif, svg',
+    'user.image.max' => 'The image size is so big',
+    'user.current_password.false' => 'The current password is incorrect',
+    'user.current_password.required' => 'The current password is required',
+    'user.new_password.required' => 'new password is required',
+    'user.new_password.confirmed' => 'The password and confirmation do not match',
+    'user.new_password.min' => 'The password should be at least 6 character',
+    'user.new_password.max' => 'The password should be maxim 30 character',
+
+
+    //===========================================================
+    // STORY
+    //===========================================================
+    'story.notFound'=>'This story is not exist',
+    'story.index' =>'All stories for auth user have been successfully restored',
+    'story.show' =>'Story restored successfully',
+    'story.store' =>'Store added successfully',
+    'story.destroy' =>'Store was deleted',
+    'story.media.required' =>'The media is required',
+    'story.media.mimes' =>'please select images and videos only',
 ];
