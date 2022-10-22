@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Requests\Api\Post;
+namespace App\Http\Requests\Api\Profile;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\PostResource;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Models\User;
 use Exception;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class IndexRequest extends FormRequest
+class ProfilePostsRequest extends FormRequest
 {
     use Api_Response;
     /**
@@ -21,9 +22,12 @@ class IndexRequest extends FormRequest
         return auth('user')->check();
     }
 
-    public function run(){
+    public function run($id){
         try {
-            $posts = auth('user')->user()->posts()->orderBy('created_at','desc')->paginate(config('constants.POST_PAGINATION'));
+            $user = User::find($id);
+            if (!$user)
+                return $this->apiResponse(null, 404, __('messages.user.notFound'));
+            $posts = $user->posts()->orderBy('created_at','desc')->paginate(config('constants.POST_PAGINATION'));
             return PostResource::collection($posts);
         }catch (Exception $ex){
             return $this->apiResponse(null,500,$ex->getMessage());

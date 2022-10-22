@@ -169,6 +169,7 @@ return [
     'user.show' => 'User restored successfully',
     'user.update' => 'User info edit successfully',
     'user.destroy' => 'The user was deleted',
+    'profile.show'=>'The profile info restored successfully',
     'user.password.change' => 'Password has been modified successfully',
     'user.image.update' => 'User image updated successfully',
     'user.bio.string' => 'Please write the bio correctly',

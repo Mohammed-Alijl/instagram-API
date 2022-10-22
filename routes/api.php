@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CommentLikeController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
+use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\ReplyController;
 use App\Http\Controllers\Api\ReplyLikeController;
 use App\Http\Controllers\Api\StoryController;
@@ -47,6 +48,10 @@ Route::group(['prefix' => 'reply/like'], function () {
     Route::get('/{id}', [ReplyLikeController::class, 'show']);
     Route::post('', [ReplyLikeController::class, 'store']);
     Route::delete('/{id}', [ReplyLikeController::class, 'destroy']);
+});
+Route::group(['prefix'=>'profile'],function(){
+   Route::get('/{id}',[ProfileController::class,'show']);
+   Route::get('/posts/{id}',[ProfileController::class,'profilePosts']);
 });
 Route::get('followers', [FollowController::class, 'followers']);
 Route::get('user/{id}', [UserController::class, 'show']);

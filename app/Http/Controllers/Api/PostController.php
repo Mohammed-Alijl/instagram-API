@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Post\DestroyRequest;
-use App\Http\Requests\Api\Post\IndexRequest;
 use App\Http\Requests\Api\Post\ShowRequest;
 use App\Http\Requests\Api\Post\StoreRequest;
 use App\Http\Requests\Api\Post\UpdateRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\Api\Profile\ProfilePostsRequest;
 
 class PostController extends Controller
 {
@@ -17,7 +16,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(IndexRequest $request)
+    public function index(ProfilePostsRequest $request)
     {
         return $request->run();
     }
