@@ -19,7 +19,7 @@ class PostResource extends JsonResource
     {
         $medias = [];
         foreach ($this->media as $media)
-            $this->isImage($media->media) ? $medias[] = config('constants.WEBSITE_URL') . '/img/posts/' . $media->media : $medias[] = config('constants.WEBSITE_URL') . '/video/posts/' . $media->media;
+            $this->isImage($media->media) ? $medias[] = config('constants.WEBSITE_URL') . 'public/img/posts/' . $media->media : $medias[] = config('constants.WEBSITE_URL') . 'public/video/posts/' . $media->media;
 
         return [
             'post_id' => $this->id,
