@@ -4,12 +4,13 @@ namespace App\Console\Commands;
 
 use App\Models\Story;
 use App\Traits\ImageTrait;
+use App\Traits\VideoTrait;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class StoryExpire extends Command
 {
-    use ImageTrait;
+    use ImageTrait, VideoTrait;
     /**
      * The name and signature of the console command.
      *
