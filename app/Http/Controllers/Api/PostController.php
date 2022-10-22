@@ -16,10 +16,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ProfilePostsRequest $request)
-    {
-        return $request->run();
-    }
+//    public function index(ProfilePostsRequest $request)
+//    {
+//        return $request->run();
+//    }
 
     /**
      * Display the specified resource.
