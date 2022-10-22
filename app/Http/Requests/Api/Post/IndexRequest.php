@@ -24,7 +24,12 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            $posts = auth('user')->user()->followers()->posts();
+            $posts=[];
+            $following = auth('user')->user()->follow;
+            foreach ($following as $follow)
+                foreach ($follow->posts as $post)
+                $posts[] = $post;
+            $posts = collect($posts)->sortByDesc('created_at');
             return PostResource::collection($posts);
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
