@@ -50,17 +50,20 @@ Route::group(['prefix' => 'reply/like'], function () {
     Route::post('', [ReplyLikeController::class, 'store']);
     Route::delete('/{id}', [ReplyLikeController::class, 'destroy']);
 });
-Route::group(['prefix'=>'profile'],function(){
-   Route::get('/{id}',[ProfileController::class,'show']);
-   Route::get('/posts/{id}',[ProfileController::class,'profilePosts']);
+Route::group(['prefix' => 'profile'], function () {
+    Route::get('/{id}', [ProfileController::class, 'show']);
+    Route::get('/posts/{id}', [ProfileController::class, 'profilePosts']);
 });
-Route::group(['prefix'=>'story/view'],function(){
-    Route::get('/users/{id}',[ViewStoryController::class,'index']);
-    Route::get('/{id}',[ViewStoryController::class,'show']);
-    Route::post('',[ViewStoryController::class,'store']);
+Route::group(['prefix' => 'story/view'], function () {
+    Route::get('/users/{id}', [ViewStoryController::class, 'index']);
+    Route::get('/{id}', [ViewStoryController::class, 'show']);
+    Route::post('', [ViewStoryController::class, 'store']);
+});
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/{id}', [UserController::class, 'show']);
+    Route::post('/search', [UserController::class, 'search']);
 });
 Route::get('followers', [FollowController::class, 'followers']);
-Route::get('user/{id}', [UserController::class, 'show']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');

@@ -171,6 +171,7 @@ return [
     'user.show' => 'User restored successfully',
     'user.update' => 'User info edit successfully',
     'user.destroy' => 'The user was deleted',
+    'user.search'=>'These users have been found',
     'profile.show'=>'The profile info restored successfully',
     'user.password.change' => 'Password has been modified successfully',
     'user.image.update' => 'User image updated successfully',
@@ -189,6 +190,9 @@ return [
     'user.new_password.confirmed' => 'The password and confirmation do not match',
     'user.new_password.min' => 'The password should be at least 6 character',
     'user.new_password.max' => 'The password should be maxim 30 character',
+    'user.username.required'=>'Username is required',
+    'user.username.max'=>'Username is too long',
+    'user.username.string'=>'Please write username with write way',
 
 
     //===========================================================
