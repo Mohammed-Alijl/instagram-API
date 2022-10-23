@@ -41,6 +41,7 @@ return [
     'authUser.name.string' => 'The name of user should be string',
     'authUser.name.max' => 'The name of user is too big',
     'authUser.name.unique' => 'This name is already taken, please select another one',
+    'authUser.name.regex'=>'The username must start with a letter and contain only letters, numbers, and scores, and must have at least eight letters and at most 30 letters.',
     'authUser.password.max' => 'The password should be maxim 30 character',
     'authUser.nick_name.required' => 'Nick name is required',
     'authUser.nick_name.string' => 'Nick name is should be a string',

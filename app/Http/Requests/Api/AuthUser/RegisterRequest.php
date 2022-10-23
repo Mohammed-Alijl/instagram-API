@@ -62,7 +62,7 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:100|unique:users,name',
+            'name' => 'required|string|max:100|unique:users,name|regex:/^[A-Za-z][A-Za-z0-9_]{7,29}$/',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|max:30',
             'bio' => 'string|max:255',
@@ -80,6 +80,7 @@ class RegisterRequest extends FormRequest
             'name.string' => __('messages.authUser.name.string'),
             'name.max' => __('messages.authUser.name.max'),
             'name.unique' => __('messages.authUser.name.unique'),
+            'name.regex'=>__('messages.authUser.name.regex'),
             'email.required' => __('messages.authUser.email.required'),
             'email.email' => __('messages.authUser.email.email'),
             'email.max' => __('messages.authUser.email.max'),
