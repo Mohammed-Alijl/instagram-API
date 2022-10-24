@@ -9,15 +9,16 @@ class UserResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
     {
         return [
-          'user_id'=>$this->id,
-          'name'=>$this->name,
-          'image_url'=>config('constants.WEBSITE_URL') . '/public/img/users/profile/' . $this->image,
+            'user_id' => $this->id,
+            'name' => $this->name,
+            'nick_name' => $this->nick_name,
+            'image_url' => config('constants.WEBSITE_URL') . '/public/img/users/profile/' . $this->image,
         ];
     }
 }
