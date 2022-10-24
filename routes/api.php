@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\ReelsController;
 use App\Http\Controllers\Api\ReplyController;
 use App\Http\Controllers\Api\ReplyLikeController;
 use App\Http\Controllers\Api\StoryController;
@@ -67,6 +68,7 @@ Route::get('followers', [FollowController::class, 'followers']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
+Route::resource('reels', ReelsController::class)->except('update', 'create', 'edit');
 Route::resources([
     'post' => PostController::class,
     'comment/reply' => ReplyController::class,

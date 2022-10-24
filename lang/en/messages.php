@@ -41,7 +41,7 @@ return [
     'authUser.name.string' => 'The name of user should be string',
     'authUser.name.max' => 'The name of user is too big',
     'authUser.name.unique' => 'This name is already taken, please select another one',
-    'authUser.name.regex'=>'The username must start with a letter and contain only letters, numbers, and scores, and must have at least eight letters and at most 30 letters.',
+    'authUser.name.regex' => 'The username must start with a letter and contain only letters, numbers, and scores, and must have at least eight letters and at most 30 letters.',
     'authUser.password.max' => 'The password should be maxim 30 character',
     'authUser.nick_name.required' => 'Nick name is required',
     'authUser.nick_name.string' => 'Nick name is should be a string',
@@ -161,7 +161,7 @@ return [
     'follow.user_id.required' => 'User id is required',
     'follow.user_id.numeric' => 'Use id should be numeric',
     'follow.user_id.exists' => 'User id is invalid',
-    'follow.yourself'=>'You can not follow yourself',
+    'follow.yourself' => 'You can not follow yourself',
 
 
     //===========================================================
@@ -171,8 +171,8 @@ return [
     'user.show' => 'User restored successfully',
     'user.update' => 'User info edit successfully',
     'user.destroy' => 'The user was deleted',
-    'user.search'=>'These users have been found',
-    'profile.show'=>'The profile info restored successfully',
+    'user.search' => 'These users have been found',
+    'profile.show' => 'The profile info restored successfully',
     'user.password.change' => 'Password has been modified successfully',
     'user.image.update' => 'User image updated successfully',
     'user.bio.string' => 'Please write the bio correctly',
@@ -190,27 +190,38 @@ return [
     'user.new_password.confirmed' => 'The password and confirmation do not match',
     'user.new_password.min' => 'The password should be at least 6 character',
     'user.new_password.max' => 'The password should be maxim 30 character',
-    'user.username.required'=>'Username is required',
-    'user.username.max'=>'Username is too long',
-    'user.username.string'=>'Please write username with write way',
+    'user.username.required' => 'Username is required',
+    'user.username.max' => 'Username is too long',
+    'user.username.string' => 'Please write username with write way',
 
 
     //===========================================================
     // STORY
     //===========================================================
-    'story.notFound'=>'This story is not exist',
-    'story.index' =>'All stories for auth user have been successfully restored',
-    'story.show' =>'Story restored successfully',
-    'story.store' =>'Store added successfully',
-    'story.destroy' =>'Store was deleted',
-    'story.view.user.index'=>'All users view story have been successfully restored',
-    'story.view.show.true'=>'User view this story',
-    'story.view.show.false'=>'The user has not seen the story',
-    'story.view.store'=>'View added successfully',
-    'story.view.exists'=>'View already exists',
-    'story.media.required' =>'The media is required',
-    'story.media.mimes' =>'please select images and videos only',
-    'story.view.story_id.required' =>'Story id is required',
-    'story.view.story_id.numeric' =>'Story id should be numeric',
-    'story.view.story_id.exists' =>'Story is not exists',
+    'story.notFound' => 'This story is not exist',
+    'story.index' => 'All stories for auth user have been successfully restored',
+    'story.show' => 'Story restored successfully',
+    'story.store' => 'Store added successfully',
+    'story.destroy' => 'Store was deleted',
+    'story.view.user.index' => 'All users view story have been successfully restored',
+    'story.view.show.true' => 'User view this story',
+    'story.view.show.false' => 'The user has not seen the story',
+    'story.view.store' => 'View added successfully',
+    'story.view.exists' => 'View already exists',
+    'story.media.required' => 'The media is required',
+    'story.media.mimes' => 'please select images and videos only',
+    'story.view.story_id.required' => 'Story id is required',
+    'story.view.story_id.numeric' => 'Story id should be numeric',
+    'story.view.story_id.exists' => 'Story is not exists',
+
+
+    //===========================================================
+    // REELS
+    //===========================================================
+    'reels.notFound' => 'Reels is not exists',
+    'reels.show' => 'Reels restored successfully',
+    'reels.store' => 'Reels added successfully',
+    'reels.destroy' => 'Reels was deleted',
+    'reels.required' => 'Reels is required',
+    'reels.mimes' => 'please select videos only',
 ];

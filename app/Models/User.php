@@ -87,6 +87,11 @@ class User extends Authenticatable
         return $this->hasMany(Story::class);
     }
 
+    public function reels()
+    {
+        return $this->hasMany(Reels::class);
+    }
+
     public function storyView()
     {
         return $this->belongsToMany(Story::class, 'views');
