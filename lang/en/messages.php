@@ -80,6 +80,10 @@ return [
     'post.update' => 'Post updated successfully',
     'post.destroy' => 'The post was deleted',
     'post.found' => 'The post is not exists',
+    'post.save.store'=>'Post saved successfully',
+    'post.save.false'=>'This post is not in your archives',
+    'post.save.delete'=>'This post has been removed from the archives',
+    'post.save.exists'=>'This post is already saved',
     'post.caption.string' => 'Please write the caption',
     'post.caption.max' => 'The caption is too long',
     'post.media.required' => 'The photo or video is required',
@@ -87,6 +91,9 @@ return [
     'post.media.*.required' => 'The photo or video is required',
     'post.media.*.max' => 'You can select only 10 photos or videos in one post',
     'post.media.*.mimes' => 'please select images and videos only',
+    'post.post_id.required' => 'post id is required',
+    'post.post_id.numeric' => 'post id should be numeric',
+    'post.post_id.exists' => 'The post is not exists',
 
 
     //===========================================================

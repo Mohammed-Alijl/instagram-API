@@ -96,4 +96,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Story::class, 'views');
     }
+
+    public function postSave()
+    {
+        return $this->belongsToMany(Post::class, 'post_saves');
+    }
 }

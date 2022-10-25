@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Requests\Api\Post;
+namespace App\Http\Requests\Api\PostSave;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
+use App\Models\PostSave;
 use Exception;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\DB;
 
 class IndexRequest extends FormRequest
 {
@@ -26,8 +28,7 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            $posts = Post::whereIn('user_id', auth('user')->user()->follow->pluck('id'))->orderBy('created_at', 'desc')->paginate(config('constants.POST_PAGINATION'));
-
+            $posts = auth('user')->user()->postSave()->orderBy('created_at','desc')->paginate(config('constants.POST_PAGINATION'));
             return PostResource::collection($posts);
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
@@ -45,6 +46,7 @@ class IndexRequest extends FormRequest
             //
         ];
     }
+
     public function failedAuthorization()
     {
         throw new HttpResponseException($this->apiResponse(null, 401, __('messages.authorization')));

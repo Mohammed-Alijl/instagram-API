@@ -18,7 +18,8 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-        $like = DB::table('likes')->where(['post_id'=>$this->id,'user_id'=>auth('user')->id()])->first();
+        $like = DB::table('likes')->where(['post_id' => $this->id, 'user_id' => auth('user')->id()])->first();
+        $save = DB::table('post_saves')->where(['post_id' => $this->id, 'user_id' => auth('user')->id()])->first();
         $medias = [];
         foreach ($this->media as $media)
             $this->isImage($media->media) ? $medias[] = config('constants.WEBSITE_URL') . 'public/img/posts/' . $media->media : $medias[] = config('constants.WEBSITE_URL') . 'public/video/posts/' . $media->media;
@@ -29,8 +30,9 @@ class PostResource extends JsonResource
             'caption' => $this->caption,
             'post_media' => $medias,
             'likes_num' => $this->userlikes()->count(),
-            'is_favorite'=> (bool)$like,
-            'num_of_comments'=>$this->comments()->count()
+            'is_favorite' => (bool)$like,
+            'is_saved' => (bool)$save,
+            'num_of_comments' => $this->comments()->count()
         ];
     }
 }

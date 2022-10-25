@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CommentLikeController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
+use App\Http\Controllers\Api\PostSaveController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\ReelsController;
 use App\Http\Controllers\Api\ReplyController;
@@ -35,11 +36,18 @@ Route::group(['prefix' => 'auth/user'], function () {
     Route::post('update/image', [UserController::class, 'imageUpdate']);
     Route::delete('', [UserController::class, 'destroy']);
 });
-Route::group(['prefix' => 'post/like'], function () {
-    Route::get('', [PostLikeController::class, 'index']);
-    Route::get('/{id}', [PostLikeController::class, 'show']);
-    Route::post('', [PostLikeController::class, 'store']);
-    Route::delete('/{id}', [PostLikeController::class, 'destroy']);
+Route::group(['prefix' => 'post'], function () {
+    Route::group(['prefix' => 'like'], function () {
+        Route::get('', [PostLikeController::class, 'index']);
+        Route::get('/{id}', [PostLikeController::class, 'show']);
+        Route::post('', [PostLikeController::class, 'store']);
+        Route::delete('/{id}', [PostLikeController::class, 'destroy']);
+    });
+    Route::group(['prefix' => 'save'], function () {
+        Route::get('', [PostSaveController::class, 'index']);
+        Route::post('', [PostSaveController::class, 'store']);
+        Route::delete('/{id}', [PostSaveController::class, 'destroy']);
+    });
 });
 Route::group(['prefix' => 'comment/like'], function () {
     Route::get('/{id}', [CommentLikeController::class, 'show']);
