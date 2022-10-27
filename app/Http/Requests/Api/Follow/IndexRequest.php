@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api\Follow;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
+use App\Models\User;
 use Exception;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -20,9 +21,12 @@ class IndexRequest extends FormRequest
         return auth('user')->check();
     }
 
-    public function run(){
+    public function run($id){
         try {
-            return auth('user')->user()->follow()->paginate(config('constants.FOLLOW_PAGINATION'));
+            $user = User::find($id);
+            if(!$user)
+                return $this->apiResponse(null,404,__('messages.user.notFound'));
+            return $user->follow()->paginate(config('constants.FOLLOW_PAGINATION'));
         }catch (Exception $ex){
             return $this->apiResponse(null,500,$ex->getMessage());
         }

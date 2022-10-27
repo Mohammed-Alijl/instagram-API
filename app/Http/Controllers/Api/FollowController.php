@@ -16,9 +16,9 @@ class FollowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(IndexRequest $request)
+    public function index(IndexRequest $request,$id)
     {
-        return $request->run();
+        return $request->run($id);
     }
 
     /**
@@ -59,8 +59,8 @@ class FollowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function followers(FollowersRequest $request)
+    public function followers(FollowersRequest $request, $id)
     {
-        return $request->run();
+        return $request->run($id);
     }
 }

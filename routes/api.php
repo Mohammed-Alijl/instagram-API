@@ -72,9 +72,10 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}', [UserController::class, 'show']);
     Route::post('/search', [UserController::class, 'search']);
 });
-Route::get('followers', [FollowController::class, 'followers']);
+Route::get('followers/{id}', [FollowController::class, 'followers']);
+Route::get('following/{id}', [FollowController::class, 'index']);
 
-Route::resource('follow', FollowController::class)->except('update', 'create', 'edit');
+Route::resource('follow', FollowController::class)->except('update', 'create', 'edit','index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
 Route::resource('reels', ReelsController::class)->except('update', 'create', 'edit');
 Route::resources([
