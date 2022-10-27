@@ -75,7 +75,6 @@ Route::group(['prefix' => 'user'], function () {
 });
 Route::get('followers/{id}', [FollowController::class, 'followers']);
 Route::get('following/{id}', [FollowController::class, 'index']);
-Route::get('public/img/users/profile/{imageName}',[ImagesController::class,'profile']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit','index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
