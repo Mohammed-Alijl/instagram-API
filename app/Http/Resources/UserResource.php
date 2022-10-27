@@ -18,7 +18,7 @@ class UserResource extends JsonResource
             'user_id' => $this->id,
             'name' => $this->name,
             'nick_name' => $this->nick_name,
-            'image_url' => config('constants.WEBSITE_URL') . '/public/img/users/profile/' . $this->image,
+            'image_url' => config('constants.WEBSITE_URL') . 'public/img/users/profile/' . $this->image,
         ];
     }
 }
