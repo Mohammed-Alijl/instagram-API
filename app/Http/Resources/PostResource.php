@@ -22,8 +22,7 @@ class PostResource extends JsonResource
         $save = DB::table('post_saves')->where(['post_id' => $this->id, 'user_id' => auth('user')->id()])->first();
         $medias = [];
         foreach ($this->media as $media)
-//            $this->isImage($media->media) ? $medias[] = config('constants.WEBSITE_URL') . 'public/img/posts/' . $media->media : $medias[] = config('constants.WEBSITE_URL') . 'public/video/posts/' . $media->media;
-            $medias[] = asset('img/posts/' . $media->media);
+            $this->isImage($media->media) ? $medias[] = asset('img/posts/' . $media->media) : $medias[] = asset('video/posts/' . $media->media);
         return [
             'post_id' => $this->id,
             'user' => new UserResource($this->user),
