@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\CommentLikeController;
 use App\Http\Controllers\Api\FollowController;
+use App\Http\Controllers\Api\ForgetPasswordController;
 use App\Http\Controllers\Api\ImagesController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PostLikeController;
@@ -34,6 +35,9 @@ Route::group(['prefix' => 'auth/user'], function () {
     Route::get('/info', [UserAuthController::class, 'getUserInfo']);
     Route::put('', [UserController::class, 'update']);
     Route::put('/password', [UserController::class, 'changePassword']);
+    Route::post('/password/code/send', [ForgetPasswordController::class, 'sendCode']);
+    Route::post('/password/code/check', [ForgetPasswordController::class, 'checkCode']);
+    Route::post('/password/reset', [ForgetPasswordController::class, 'resetPassword']);
     Route::post('update/image', [UserController::class, 'imageUpdate']);
     Route::delete('', [UserController::class, 'destroy']);
 });
@@ -76,7 +80,7 @@ Route::group(['prefix' => 'user'], function () {
 Route::get('followers/{id}', [FollowController::class, 'followers']);
 Route::get('following/{id}', [FollowController::class, 'index']);
 
-Route::resource('follow', FollowController::class)->except('update', 'create', 'edit','index');
+Route::resource('follow', FollowController::class)->except('update', 'create', 'edit', 'index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
 Route::resource('reels', ReelsController::class)->except('update', 'create', 'edit');
 Route::resources([

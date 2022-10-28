@@ -70,6 +70,26 @@ return [
 
 
     //===========================================================
+    // FORGET PASSWORD
+    //===========================================================
+    'forgetPassword.email.required' => 'البريد الالكتروني مطلوب',
+    'forgetPassword.email.email' => 'الرجاء ادخال بريد الكتروني صحيح',
+    'forgetPassword.email.exists' => 'الرجاء ادخال بريد الكتروني صحيح',
+    'forgetPassword.code.required' => 'الرمز مطلوب',
+    'forgetPassword.code.numeric' => 'يجب ان يكون الرمز ارقام فقط',
+    'forgetPassword.code.exists' => 'الرمز غير صحيح',
+    'forgetPassword.code.max' => 'يجب ان يكون الرمز 6 ارقام',
+    'forgetPassword.code.min' => 'يجب ان يكون الرمز 6 ارقام',
+    'forgetPassword.code.expired' => 'انتهت صلاحية الرمز',
+    'forgetPassword.code.valid' => 'الرمز صحيح',
+    'forgetPassword.password.required' => 'كلمة المرور الجديدة مطلوبة',
+    'forgetPassword.password.string' => 'يجب ان تكون كلمة المرور عبارة عن بعض الحروف او الارقام او الرموز',
+    'forgetPassword.password.min' => 'يجب ان تكون كلمة السر 6 خانات على الاقل',
+    'forgetPassword.message.sent' => 'تم ارسال الرمز بنجاح, الرجاء تفقد البريد الالكتروني الخاص بك',
+    'forgetPassword.password.reset' => 'تم اعادة تعين كلمة المرور بنجاح',
+
+
+    //===========================================================
     // POST
     //===========================================================
     'post.index' => 'تم ارجاع جميع المنشورات الخاصة بالمستخدم بنجاح',
@@ -78,10 +98,10 @@ return [
     'post.update' => 'تم تعديل المنشور بنجاح',
     'post.destroy' => 'تم حذف المنشور بنجاح',
     'post.found' => 'هذا المنشور غير موجود',
-    'post.save.store'=>'تم حفظ المنشور بنجاح',
-    'post.save.false'=>'هذا المنشور غير موجود في قائمة المحفوظات',
-    'post.save.delete'=>'تم ازالة المنشور من قائمة المحفوظات',
-    'post.save.exists'=>'هذا المنشور محفوظ مسبقا',
+    'post.save.store' => 'تم حفظ المنشور بنجاح',
+    'post.save.false' => 'هذا المنشور غير موجود في قائمة المحفوظات',
+    'post.save.delete' => 'تم ازالة المنشور من قائمة المحفوظات',
+    'post.save.exists' => 'هذا المنشور محفوظ مسبقا',
     'post.caption.string' => 'رجاء اكتب الشرح التوضيحي للمنشور',
     'post.caption.max' => 'الشرح التوضيحي اكبؤ من اللازم',
     'post.media.required' => 'الصور او الفيديوهات مطلوبة',

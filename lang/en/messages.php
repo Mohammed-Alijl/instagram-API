@@ -71,6 +71,27 @@ return [
     'authUser.deleted' => 'The user was deleted',
 
 
+
+    //===========================================================
+    // FORGET PASSWORD
+    //===========================================================
+    'forgetPassword.email.required' => 'The email is required',
+    'forgetPassword.email.email' => 'Please enter a valid email',
+    'forgetPassword.email.exists' => 'This email is invalid',
+    'forgetPassword.code.required' => 'The code is required',
+    'forgetPassword.code.numeric' => 'The code should be numbers only',
+    'forgetPassword.code.exists' => 'code is invalid',
+    'forgetPassword.code.max' => 'The code should be 6 character',
+    'forgetPassword.code.min' => 'The code should be 6 character',
+    'forgetPassword.code.expired' => 'The code was expired',
+    'forgetPassword.code.valid' => 'The code is valid',
+    'forgetPassword.password.required' => 'Password is required',
+    'forgetPassword.password.string' => 'Password should be some character',
+    'forgetPassword.password.min' => 'Password should be at least 6 character',
+    'forgetPassword.message.sent' => 'Message sent successfully, Check your inbox',
+    'forgetPassword.password.reset' => 'password has been successfully reset',
+
+
     //===========================================================
     // POST
     //===========================================================
