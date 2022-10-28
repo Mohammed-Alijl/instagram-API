@@ -79,7 +79,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/search', [UserController::class, 'search']);
 });
 Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-    ->middleware(['signed', 'throttle:6,1'])
+    ->middleware(['signed', 'throttle:6,1','PutApiKey'])
     ->name('verification.verify');
 
 
