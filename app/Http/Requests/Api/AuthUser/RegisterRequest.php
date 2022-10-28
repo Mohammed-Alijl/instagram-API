@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Traits\ImageTrait;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Exception;
@@ -45,6 +46,7 @@ class RegisterRequest extends FormRequest
             } else
                 $user->image = 'default.png';
             if ($user->save()) {
+                event(new Registered($user));
                 $token = $user->createToken('UserType')->accessToken;
                 return $this->apiResponse(['access_token' => $token, 'user' => new UserResource($user)], 201, __('messages.register'));
             }

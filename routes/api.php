@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\ReplyLikeController;
 use App\Http\Controllers\Api\StoryController;
 use App\Http\Controllers\Api\UserAuthController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\VerifyEmailController;
 use App\Http\Controllers\Api\ViewStoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -77,6 +78,11 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}', [UserController::class, 'show']);
     Route::post('/search', [UserController::class, 'search']);
 });
+Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
+
+
 Route::get('followers/{id}', [FollowController::class, 'followers']);
 Route::get('following/{id}', [FollowController::class, 'index']);
 
