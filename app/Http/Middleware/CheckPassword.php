@@ -18,8 +18,10 @@ class CheckPassword
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->header('apiKey') != env('apiKey','p@ssword123'))
-            return $this->apiResponse(null,401,'Wrong api Key');
-        return $next($request);
+        if($request->header('apiKey') == env('apiKey','p@ssword123'))
+            return $next($request);
+        if($request->apiKey == env('apiKey','p@ssword123'))
+            return $next($request);
+        return $this->apiResponse(null,401,'Wrong api Key');
     }
 }
