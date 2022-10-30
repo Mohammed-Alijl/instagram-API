@@ -25,7 +25,8 @@ class IndexRequest extends FormRequest
 
     public function run(){
         try {
-            return CommentResource::collection(auth('user')->user()->Comments()->where('post_id',$this->post_id)->OrderBy('created_at')->paginate(config('constants.USER_PAGINATION')));
+            return CommentResource::collection(Comment::where('post_id',$this->post_id)->OrderBy('created_at','desc')->paginate(config('constants.USER_PAGINATION')));
+
         }catch (Exception $ex){
             return $this->apiResponse(null,500,$ex->getMessage());
         }
