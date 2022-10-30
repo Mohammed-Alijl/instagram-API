@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'nick_name' => $this->nick_name,
             'image_url' => asset('img/users/profile/' . $this->image),
+            'user_stories'=> StoryResource::collection($this->stories)
         ];
     }
 }
