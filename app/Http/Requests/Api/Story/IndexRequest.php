@@ -4,6 +4,7 @@ namespace App\Http\Requests\Api\Story;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\StoryResource;
+use App\Http\Resources\UserResource;
 use Illuminate\Foundation\Http\FormRequest;
 use Exception;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -25,8 +26,7 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            $stories = auth('user')->user()->stories->sortByDesc('created_at');
-            return $this->apiResponse(StoryResource::collection($stories),200,__('messages.story.index'));
+            return UserResource::collection(auth('user')->user()->follow()->paginate(config('constants.FOLLOW_PAGINATION')));
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
         }
