@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\DB;
 
 class UserResource extends JsonResource
 {
@@ -14,12 +15,14 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        $followHim = DB::table('user_followers')->where(['user_id' => $this->id, 'follower_id' => auth('user')->id()])->first();
         return [
             'user_id' => $this->id,
             'name' => $this->name,
             'nick_name' => $this->nick_name,
             'image_url' => asset('img/users/profile/' . $this->image),
-            'user_stories'=> StoryResource::collection($this->stories)
+            'user_stories'=> StoryResource::collection($this->stories),
+            'youFollowHim' => (bool)$followHim,
         ];
     }
 }
