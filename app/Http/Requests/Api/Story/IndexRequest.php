@@ -26,7 +26,7 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            return UserResource::collection(auth('user')->user()->follow()->paginate(config('constants.FOLLOW_PAGINATION')));
+            return UserResource::collection(auth('user')->user()->follow);
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
         }
