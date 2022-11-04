@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Follow\DestroyRequest;
 use App\Http\Requests\Api\Follow\FollowersRequest;
 use App\Http\Requests\Api\Follow\IndexRequest;
+use App\Http\Requests\Api\Follow\SearchFollowerRequest;
 use App\Http\Requests\Api\Follow\ShowRequest;
 use App\Http\Requests\Api\Follow\StoreRequest;
 
@@ -63,4 +64,13 @@ class FollowController extends Controller
     {
         return $request->run($id);
     }
+
+    public function searchFollowers(SearchFollowerRequest $request){
+        return $request->run();
+    }
+
+    public function searchFollowing(SearchFollowerRequest $request){
+        return $request->run();
+    }
+
 }

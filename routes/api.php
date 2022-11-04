@@ -83,8 +83,10 @@ Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
     ->name('verification.verify');
 
 
-Route::get('followers/{id}', [FollowController::class, 'followers']);
 Route::get('following/{id}', [FollowController::class, 'index']);
+Route::post('following/search',[FollowController::class,'searchFollowing']);
+Route::get('followers/{id}', [FollowController::class, 'followers']);
+Route::post('followers/search',[FollowController::class,'searchFollowers']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit', 'index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');

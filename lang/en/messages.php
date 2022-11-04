@@ -221,6 +221,9 @@ return [
     'user.username.required' => 'Username is required',
     'user.username.max' => 'Username is too long',
     'user.username.string' => 'Please write username with write way',
+    'follow.search'=>'These are the search results',
+    'follow.toSearch.required'=>'Please enter the name of user',
+    'follow.toSearch.string'=>'Please enter the name of user',
 
 
     //===========================================================
