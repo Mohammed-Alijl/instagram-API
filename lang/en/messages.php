@@ -190,7 +190,9 @@ return [
     'follow.user_id.numeric' => 'Use id should be numeric',
     'follow.user_id.exists' => 'User id is invalid',
     'follow.yourself' => 'You can not follow yourself',
-
+    'follow.search'=>'These are the search results',
+    'follow.toSearch.required'=>'Please enter the name of user',
+    'follow.toSearch.string'=>'Please enter the name of user',
 
     //===========================================================
     // USER
@@ -221,9 +223,7 @@ return [
     'user.username.required' => 'Username is required',
     'user.username.max' => 'Username is too long',
     'user.username.string' => 'Please write username with write way',
-    'follow.search'=>'These are the search results',
-    'follow.toSearch.required'=>'Please enter the name of user',
-    'follow.toSearch.string'=>'Please enter the name of user',
+    'user.date_of_birth.underage'=>'you are underage',
 
 
     //===========================================================
