@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
- use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -100,5 +100,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function postSave()
     {
         return $this->belongsToMany(Post::class, 'post_saves');
+    }
+
+    public function searchHistory()
+    {
+        return $this->hasMany(SearchHistory::class);
     }
 }

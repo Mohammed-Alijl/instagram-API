@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\ReelsController;
 use App\Http\Controllers\Api\ReplyController;
 use App\Http\Controllers\Api\ReplyLikeController;
+use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\StoryController;
 use App\Http\Controllers\Api\UserAuthController;
 use App\Http\Controllers\Api\UserController;
@@ -76,7 +77,12 @@ Route::group(['prefix' => 'story/view'], function () {
 });
 Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}', [UserController::class, 'show']);
-    Route::post('/search', [UserController::class, 'search']);
+    Route::post('/search', [SearchController::class, 'search']);
+});
+Route::group(['prefix' => 'search/history'], function () {
+    Route::get('', [SearchController::class, 'index']);
+    Route::post('', [SearchController::class, 'store']);
+    Route::delete('/{id}', [SearchController::class, 'destroy']);
 });
 Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
     ->middleware(['signed', 'throttle:6,1'])
@@ -84,9 +90,9 @@ Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
 
 
 Route::get('following/{id}', [FollowController::class, 'index']);
-Route::post('following/search',[FollowController::class,'searchFollowing']);
+Route::post('following/search', [FollowController::class, 'searchFollowing']);
 Route::get('followers/{id}', [FollowController::class, 'followers']);
-Route::post('followers/search',[FollowController::class,'searchFollowers']);
+Route::post('followers/search', [FollowController::class, 'searchFollowers']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit', 'index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');

@@ -187,9 +187,9 @@ return [
     'follow.user_id.numeric' => 'يجب ان يكون معرف المستخد ارقام فقط',
     'follow.user_id.exists' => 'هذا المستخدم غير موجود',
     'follow.yourself' => 'لا يمكنك ان تتابع نفسك',
-    'follow.search'=>'هذه نتائج البحث',
-    'follow.toSearch.required'=>'الرجاء ادخال اسم المستخدم الذي تريد البحث عنه',
-    'follow.toSearch.string'=>'الرجاء ادخال اسم المستخدم الذي تريد البحث عنه',
+    'follow.search' => 'هذه نتائج البحث',
+    'follow.toSearch.required' => 'الرجاء ادخال اسم المستخدم الذي تريد البحث عنه',
+    'follow.toSearch.string' => 'الرجاء ادخال اسم المستخدم الذي تريد البحث عنه',
 
 
     //===========================================================
@@ -221,7 +221,19 @@ return [
     'user.username.required' => 'اسم المستخدم مطلوب',
     'user.username.max' => 'اسم المستخدم اطول من اللازم',
     'user.username.string' => 'الرجاء كتابة اسم المستخدم بطريقة صحيحة',
-    'user.date_of_birth.underage'=>'انت تحت العمر المطلوب',
+    'user.date_of_birth.underage' => 'انت تحت العمر المطلوب',
+
+
+    //===========================================================
+    // SEARCH
+    //===========================================================
+    'search.history.index' => 'تم ارجاع اخر نتائج البحث',
+    'search..history.store' => 'تم الاضافة الى سجل البحث',
+    'search.history.toSave.required' => 'حقل toSave مطلوب',
+    'search.history.toSave.string' => 'حقل toSave مطلوب',
+    'search.history.toSave.max' => 'النص المضاف اطول من اللازم',
+    'search.history.notFound' => 'غير موجود',
+    'search.history.delete' => 'تمت الازلة من سجل البحث',
 
 
     //===========================================================

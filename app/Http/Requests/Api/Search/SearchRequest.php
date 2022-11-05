@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Api\User;
+namespace App\Http\Requests\Api\Search;
 
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\UserResource;

@@ -71,7 +71,6 @@ return [
     'authUser.deleted' => 'The user was deleted',
 
 
-
     //===========================================================
     // FORGET PASSWORD
     //===========================================================
@@ -101,10 +100,10 @@ return [
     'post.update' => 'Post updated successfully',
     'post.destroy' => 'The post was deleted',
     'post.found' => 'The post is not exists',
-    'post.save.store'=>'Post saved successfully',
-    'post.save.false'=>'This post is not in your archives',
-    'post.save.delete'=>'This post has been removed from the archives',
-    'post.save.exists'=>'This post is already saved',
+    'post.save.store' => 'Post saved successfully',
+    'post.save.false' => 'This post is not in your archives',
+    'post.save.delete' => 'This post has been removed from the archives',
+    'post.save.exists' => 'This post is already saved',
     'post.caption.string' => 'Please write the caption',
     'post.caption.max' => 'The caption is too long',
     'post.media.required' => 'The photo or video is required',
@@ -190,9 +189,9 @@ return [
     'follow.user_id.numeric' => 'Use id should be numeric',
     'follow.user_id.exists' => 'User id is invalid',
     'follow.yourself' => 'You can not follow yourself',
-    'follow.search'=>'These are the search results',
-    'follow.toSearch.required'=>'Please enter the name of user',
-    'follow.toSearch.string'=>'Please enter the name of user',
+    'follow.search' => 'These are the search results',
+    'follow.toSearch.required' => 'Please enter the name of user',
+    'follow.toSearch.string' => 'Please enter the name of user',
 
     //===========================================================
     // USER
@@ -223,8 +222,19 @@ return [
     'user.username.required' => 'Username is required',
     'user.username.max' => 'Username is too long',
     'user.username.string' => 'Please write username with write way',
-    'user.date_of_birth.underage'=>'you are underage',
+    'user.date_of_birth.underage' => 'you are underage',
 
+
+    //===========================================================
+    // SEARCH
+    //===========================================================
+    'search.history.index' => 'The last search results have been returned',
+    'search..history.store' => 'Added to search history',
+    'search.history.toSave.required' => 'The toSave field is required',
+    'search.history.toSave.string' => 'The toSave field is required',
+    'search.history.toSave.max' => 'Added text is too long',
+    'search.history.notFound' => 'Not Found',
+    'search.history.delete' => 'Removed from search history',
 
     //===========================================================
     // STORY
