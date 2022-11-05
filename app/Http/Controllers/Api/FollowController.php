@@ -7,6 +7,7 @@ use App\Http\Requests\Api\Follow\DestroyRequest;
 use App\Http\Requests\Api\Follow\FollowersRequest;
 use App\Http\Requests\Api\Follow\IndexRequest;
 use App\Http\Requests\Api\Follow\SearchFollowerRequest;
+use App\Http\Requests\Api\Follow\SearchFollowingRequest;
 use App\Http\Requests\Api\Follow\ShowRequest;
 use App\Http\Requests\Api\Follow\StoreRequest;
 
@@ -69,7 +70,7 @@ class FollowController extends Controller
         return $request->run();
     }
 
-    public function searchFollowing(SearchFollowerRequest $request){
+    public function searchFollowing(SearchFollowingRequest $request){
         return $request->run();
     }
 
