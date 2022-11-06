@@ -38,7 +38,7 @@ class SendCodeRequest extends FormRequest
             $codeData->email = $this->email;
             $codeData->code = $code;
             if ($codeData->save()) {
-                Mail::to($this->email)->send(new SendCodeResetPassword($code));
+                Mail::to($this->email)->send(new SendCodeResetPassword($code,$user->name));
                 return $this->apiResponse(['send' => true], 200, __('messages.forgetPassword.message.sent'));
             }
             return $this->apiResponse(['send' => false], 500, __('messages.failed'));

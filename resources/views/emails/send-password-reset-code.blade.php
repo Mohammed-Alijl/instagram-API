@@ -34,12 +34,13 @@
                             </tr>
                             <tr>
                                 <td style="padding:0 35px;">
-                                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">You have
-                                        requested to reset your password</h1>
+                                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Hi {{$name}}
+                                        You have requested to reset your password</h1>
                                     <span
                                         style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                        The following code can be used to reset your password. It expires an hour after it is sent.
+                                        We're sorry to hear that you're having trouble with logging in to Instagram. We've received a message that you've forgotten your password. If this was you,  you can reset your password now .
+                                        This is your verification code.
                                     </p>
                                     <p
                                        style="background:#E1306C;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
@@ -47,6 +48,9 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>
+                                    <p>The code expires an hour after the message is received</p>
+                                </td>
                                 <td style="height:40px;">&nbsp;</td>
                             </tr>
                         </table>
