@@ -240,7 +240,7 @@ return [
     // STORY
     //===========================================================
     'story.notFound' => 'This story is not exist',
-    'story.index' => 'All stories for auth user have been successfully restored',
+    'story.index' => 'All stories for following users have been successfully restored',
     'story.show' => 'Story restored successfully',
     'story.store' => 'Store added successfully',
     'story.destroy' => 'Store was deleted',

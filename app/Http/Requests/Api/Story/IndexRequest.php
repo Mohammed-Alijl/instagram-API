@@ -5,6 +5,7 @@ namespace App\Http\Requests\Api\Story;
 use App\Http\Controllers\Api\Traits\Api_Response;
 use App\Http\Resources\StoryResource;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Exception;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -26,7 +27,15 @@ class IndexRequest extends FormRequest
     public function run()
     {
         try {
-            return UserResource::collection(auth('user')->user()->follow);
+            $id = [];
+            $followings = auth('user')->user()->follow;
+            foreach($followings as $following){
+                if($following->stories->count()>0)
+                    $id[] = $following->id;
+            }
+            $users = User::whereIn('id',$id)->get();
+            return $this->apiResponse(UserResource::collection($users),200,__('messages.story.index'));
+
         } catch (Exception $ex) {
             return $this->apiResponse(null, 500, $ex->getMessage());
         }
