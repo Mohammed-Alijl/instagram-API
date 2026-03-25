@@ -17,11 +17,21 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $firstName = fake()->firstName();
+        $lastName = fake()->lastName();
+        $name = $firstName . ' ' . $lastName;
+        $nickName = strtolower($firstName) . strtolower($lastName) . rand(100, 999);
+        
         return [
-            'name' => fake()->name(),
+            'name' => $name,
+            'nick_name' => $nickName,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('password123'),
+            'bio' => fake()->sentence(6),
+            'date_of_birth' => fake()->dateTimeBetween('-50 years', '-18 years')->format('Y-m-d'),
+            'phone' => fake()->unique()->numerify('+1##########'),
+            'image' => 'avatar-' . rand(1, 20) . '.jpg',
             'remember_token' => Str::random(10),
         ];
     }

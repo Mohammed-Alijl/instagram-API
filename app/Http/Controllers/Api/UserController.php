@@ -7,6 +7,7 @@ use App\Http\Requests\Api\User\ChangePasswordRequest;
 use App\Http\Requests\Api\User\DestroyRequest;
 use App\Http\Requests\Api\User\ShowRequest;
 use App\Http\Requests\Api\User\UpdateProfileImageRequest;
+use App\Http\Requests\Api\User\UpdateRequest;
 
 class UserController extends Controller
 {
@@ -15,7 +16,7 @@ class UserController extends Controller
         return $request->run($id);
     }
 
-    public function update(UpdateProfileImageRequest $request)
+    public function update(UpdateRequest $request)
     {
         return $request->run();
     }

@@ -16,7 +16,7 @@ class ReelsResource extends JsonResource
     {
         return [
             'reels_id' => $this->id,
-            'reels' => asset('public/video/reels/' . $this->reels),
+            'reels' => asset('video/reels/' . $this->reels),
             'user' => new UserResource($this->user)
         ];
     }

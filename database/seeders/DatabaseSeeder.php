@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +13,40 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Generate images first
+        $this->call([
+            ImageSeeder::class,
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Create base entities
+        $this->call([
+            UserSeeder::class,
+            PostSeeder::class,
+            StorySeeder::class,
+            ReelsSeeder::class,
+        ]);
+
+        // Create post media
+        $this->call([
+            PostMediaSeeder::class,
+        ]);
+
+        // Create comments and replies
+        $this->call([
+            CommentSeeder::class,
+            ReplySeeder::class,
+        ]);
+
+        // Create relationships
+        $this->call([
+            UserFollowersSeeder::class,
+            LikesSeeder::class,
+            CommentLikeSeeder::class,
+            ReplyLikeSeeder::class,
+            PostSaveSeeder::class,
+            ViewSeeder::class,
+        ]);
+
+        $this->command->info('Database seeding completed successfully! 🎉');
     }
 }

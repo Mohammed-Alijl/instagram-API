@@ -46,7 +46,7 @@ class RegisterRequest extends FormRequest
             } else
                 $user->image = 'default.png';
             if ($user->save()) {
-                event(new Registered($user));
+                // event(new Registered($user));
                 $token = $user->createToken('UserType')->accessToken;
                 return $this->apiResponse(['access_token' => $token, 'user' => new UserResource($user)], 201, __('messages.register'));
             }

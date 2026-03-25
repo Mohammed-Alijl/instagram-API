@@ -96,7 +96,14 @@ Route::post('followers/search', [FollowController::class, 'searchFollowers']);
 
 Route::resource('follow', FollowController::class)->except('update', 'create', 'edit', 'index');
 Route::resource('story', StoryController::class)->except('update', 'create', 'edit');
-Route::resource('reels', ReelsController::class)->except('update', 'create', 'edit');
+Route::group(['prefix' => 'reels'], function () {
+    Route::get('/feed', [ReelsController::class, 'feed']); // Get all users' reels (feed)
+    Route::get('/user/{userId}', [ReelsController::class, 'userReels']); // Get specific user's reels
+    Route::get('/', [ReelsController::class, 'index']); // Get authenticated user's reels
+    Route::post('/', [ReelsController::class, 'store']); // Upload reel
+    Route::get('/{id}', [ReelsController::class, 'show'])->where('id', '[0-9]+'); // Get specific reel
+    Route::delete('/{id}', [ReelsController::class, 'destroy'])->where('id', '[0-9]+'); // Delete reel
+});
 Route::resources([
     'post' => PostController::class,
     'comment/reply' => ReplyController::class,
