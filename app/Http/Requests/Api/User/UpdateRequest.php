@@ -28,11 +28,11 @@ class UpdateRequest extends FormRequest
     {
         try {
             $user = auth('user')->user();
-            if ($this->filled('nick_name'))
+            if ($this->has('nick_name'))
                 $user->nick_name = $this->nick_name;
-            if ($this->filled('bio'))
+            if ($this->has('bio'))
                 $user->bio = $this->bio;
-            if ($this->filled('date_of_birth'))
+            if ($this->has('date_of_birth'))
                 $user->date_of_birth = $this->date_of_birth;
             if ($user->save())
                 return $this->apiResponse(new UserResource($user), 200, __('messages.user.update'));
@@ -50,9 +50,9 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'bio' => 'string|max:255',
-            'nick_name' => 'string|max:255',
-            'date_of_birth' => 'date_format:d/m/Y|max:255',
+            'bio' => 'nullable|string|max:255',
+            'nick_name' => 'nullable|string|max:255',
+            'date_of_birth' => 'nullable|date_format:d/m/Y|max:255',
         ];
     }
 
