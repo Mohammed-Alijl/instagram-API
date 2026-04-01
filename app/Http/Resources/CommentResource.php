@@ -18,7 +18,8 @@ class CommentResource extends JsonResource
           'comment_id'=>$this->id,
           'comment'=>$this->comment,
           'user'=>new UserResource($this->user),
-          'created_before'=>$this->created_at->diffForHumans()
+          'created_before'=>$this->created_at->diffForHumans(),
+          'num_of_replies'=>$this->replies()->count()
         ];
     }
 }
